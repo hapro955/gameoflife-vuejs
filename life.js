@@ -35,9 +35,9 @@ new Vue({
 
         calculateCellState: function (i, j) {
             if(this.countNeighborPlanet(i, j) < 2 || this.countNeighborPlanet(i, j) > 3) {
-                this.result[i][j] = 0;
+                this.mapUniverse[i][j] = 0;
             } else if(this.countNeighborPlanet(i, j) === 3) {
-                this.result[i][j] = 1;
+                this.mapUniverse[i][j] = 1;
             } 
         },
 
