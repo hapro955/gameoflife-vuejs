@@ -9,4 +9,15 @@ new Vue({
         nextMap: false,
     },
 
+    methods: {
+        createUniverseMapNumber: function () {
+            for (let i = 0; i < this.x; i++) {
+                this.mapUniverse[i] = [];
+                for(let j = 0; j < this.y; j++) {
+                    this.mapUniverse[i][j] = Math.round(Math.random());
+                }
+            }
+            return this.mapUniverse;
+        }
+    }
 });
