@@ -33,5 +33,13 @@ new Vue({
                 this.getValueCell(i + 1,j) + this.getValueCell(i + 1,j + 1));
         },
 
+        calculateCellState: function (i, j) {
+            if(this.countNeighborPlanet(i, j) < 2 || this.countNeighborPlanet(i, j) > 3) {
+                this.result[i][j] = 0;
+            } else if(this.countNeighborPlanet(i, j) === 3) {
+                this.result[i][j] = 1;
+            } 
+        },
+
     }
 });
