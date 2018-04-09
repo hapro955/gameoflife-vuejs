@@ -50,5 +50,16 @@ new Vue({
             return this.mapUniverse;
         },
 
+    },
+
+    computed: {
+
+        createUniverseMap: function () {
+            return this.createUniverseMapNumber();
+        },
+
+        nextUniverseMap: function () {
+            return this.nextUniverseMapNumber();
+        }
     }
 });
