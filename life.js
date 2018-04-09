@@ -1,13 +1,25 @@
 var map =[];
-new Vue({
-	el: '#map',
+var app = new Vue({
+    el: '#map',
     data: {
         x: 50,
         y: 50,
         mapUniverse: map,
         creatMap: false,
         nextMap: false,
+        nextMap1: false
     },
+
+    computed: {
+
+        createUniverseMap: function () {
+            return this.createUniverseMapNumber();
+        },
+
+        nextUniverseMap: function () {
+            return this.nextUniverseMapNumber();
+        }
+    }
 
     methods: {
         createUniverseMapNumber: function () {
@@ -42,6 +54,9 @@ new Vue({
         },
 
         nextUniverseMapNumber: function () {
+            this.createMap = false;
+            this.nextMap1 = true;
+            this.nextMap = false;
             for(let i = 0; i < this.x; i++) {
                 for(let j = 0; j < this.y; j++) {
                     this.calculateCellState(i, j);
@@ -50,16 +65,17 @@ new Vue({
             return this.mapUniverse;
         },
 
+        nextUniverseMapNumber1: function () {
+            this.nextMap = true;
+            this.nextMap1 = false;
+            for(let i = 0; i < this.x; i++) {
+                for(let j = 0; j < this.y; j++) {
+                    this.calculateCellState(i, j);
+                }
+            }
+            return this.mapUniverse;
+        } 
+
     },
 
-    computed: {
-
-        createUniverseMap: function () {
-            return this.createUniverseMapNumber();
-        },
-
-        nextUniverseMap: function () {
-            return this.nextUniverseMapNumber();
-        }
-    }
 });
