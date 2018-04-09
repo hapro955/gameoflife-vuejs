@@ -41,5 +41,14 @@ new Vue({
             } 
         },
 
+        nextUniverseMapNumber: function () {
+            for(let i = 0; i < this.x; i++) {
+                for(let j = 0; j < this.y; j++) {
+                    this.calculateCellState(i, j);
+                }
+            }
+            return this.mapUniverse;
+        },
+
     }
 });
