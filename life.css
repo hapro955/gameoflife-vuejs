@@ -1,4 +1,8 @@
-.planet {
+#map {
+  float: left;
+}
+
+.xxx-1 {
   background-color: #231475;
   width: 6px;
   height: 6px;
@@ -6,7 +10,7 @@
   float: left;
 }
 
-.space {
+.xxx-0 {
   background-color: black;
   width: 6px;
   height: 6px;
