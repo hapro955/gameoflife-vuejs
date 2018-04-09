@@ -18,6 +18,14 @@ new Vue({
                 }
             }
             return this.mapUniverse;
-        }
+        },
+
+        getValueCell: function (i, j) {
+            if(i < 0 || i >= this.x || j < 0 || j >= this.y) {
+                return 0;
+            }
+            return this.mapUniverse[i][j];
+        },
+
     }
 });
