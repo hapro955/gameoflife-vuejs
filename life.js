@@ -27,5 +27,11 @@ new Vue({
             return this.mapUniverse[i][j];
         },
 
+        countNeighborPlanet: function (i, j) {
+            return (this.getValueCell(i - 1,j - 1) + this.getValueCell(i - 1,j) + this.getValueCell(i - 1,j + 1) + 
+                this.getValueCell(i,j - 1) + this.getValueCell(i,j + 1) + this.getValueCell(i + 1,j - 1) + 
+                this.getValueCell(i + 1,j) + this.getValueCell(i + 1,j + 1));
+        },
+
     }
 });
