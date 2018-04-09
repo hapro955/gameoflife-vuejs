@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="life.css">
+    <script type="text/javascript" src="vue.js"></script>
+    
+</head>
+<body style="padding: 10px 10px;">
+    <div id ="map" >
+        <button v-on:click="createMap = true">Create map</button><br>
+        <button v-on:click="nextUniverseMapNumber">Next map</button><br>
+        <button v-on:click="nextUniverseMapNumber1">Next map</button>
+        
+        <div v-if="createMap" v-for="item in createUniverseMap">
+            <div v-for="i in 50" v-bind:class="'xxx-' + item[i-1]"></div>
+        </div>
+        
+        <div v-if="nextMap">
+            <div v-for="item in nextUniverseMap">
+                <div v-for="i in 50" v-bind:class="'xxx-' + item[i-1]"></div>
+            </div>
+        </div>
+
+        <div v-if="nextMap1">
+            <div v-for="item in nextUniverseMap">
+                <div v-for="i in 50" v-bind:class="'xxx-' + item[i-1]"></div>
+            </div>
+        </div>
+    </div>    
+
+</body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script type="text/javascript" src="life.js"></script>
+
+</html>
